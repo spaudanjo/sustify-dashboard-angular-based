@@ -12,12 +12,14 @@ import * as R from 'ramda';
 export class AppComponent {
 
   chart = [];
+  barChart = [];
   doughnutLeft = [];
   doughnutRight = [];
 
   @ViewChild('canvas') canvas: ElementRef;
-  @ViewChild('canvas1') canvas1: ElementRef;
-  @ViewChild('canvas2') canvas2: ElementRef;
+  @ViewChild('canvasBar') canvasBar: ElementRef;
+  @ViewChild('canvasDoughbutLeft') canvasDoughbutLeft: ElementRef;
+  @ViewChild('canvasDoughbutRight') canvasDoughbutRight: ElementRef;
 
 
   constructor(private _knowledgeBeforeAfter: KnowledgeBeforeAfterService) {}
@@ -30,8 +32,6 @@ export class AppComponent {
     this._knowledgeBeforeAfter.getData()
     .subscribe(res => {
 
-      const ctx = this.canvas.nativeElement.getContext('2d');
-
       const chartData = {
         labels: this.createRangeLabels(),
         datasets: [{
@@ -41,7 +41,29 @@ export class AppComponent {
         }]
       };
 
-      this.doughnutLeft = new Chart(ctx, {
+      const ctxBar = this.canvasBar.nativeElement.getContext('2d');
+
+      this.barChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+          labels: ["Before Course", "After Course"],
+          datasets: [
+            {
+              label: "% Knowledge",
+              data: [40, 90],
+              backgroundColor: [
+                "rgba(211, 216, 0)",
+                "rgba(116, 192, 153)" // Mint
+              ],
+              borderWidth: 0
+            }
+          ]
+        }
+      });
+
+      const ctxLeft = this.canvasDoughbutLeft.nativeElement.getContext('2d');
+
+      this.doughnutLeft = new Chart(ctxLeft, {
         type: 'doughnut',
         data: {
           labels: ["Workers", "Supervisors", "Managers"],
@@ -65,7 +87,9 @@ export class AppComponent {
         }
       });
 
-      this.doughnutRight = new Chart(ctx, {
+      const ctxRight = this.canvasDoughbutRight.nativeElement.getContext('2d');
+
+      this.doughnutRight = new Chart(ctxRight, {
         type: 'doughnut',
         data: {
           labels: ["Workers", "Supervisors", "Managers"],
@@ -88,6 +112,8 @@ export class AppComponent {
           ]
         }
       });
+
+      const ctx = this.canvas.nativeElement.getContext('2d');
 
       this.chart = new Chart(ctx, {
         type: 'horizontalBar',
