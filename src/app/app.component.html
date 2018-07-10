@@ -5,30 +5,38 @@
   <div class="wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-push-2">
+        <div class="col-md-8 col-md-push-2 dashboard-chart">
           <p><strong>Result: Knowledge before and after course</strong></p>
           <canvas #canvasBar id="canvasBar">{{ barChart }}</canvas>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
-          <p><strong>User demographics: Role</strong></p>
-          <canvas #canvasDoughbutLeft id="canvasDoughbutLeft">{{ doughnutLeft }}</canvas>
+            <div class="row">
+                <div class="col-md-11 dashboard-chart">
+                  <p><strong>User demographics: Role</strong></p>
+                  <canvas #canvasDoughbutLeft id="canvasDoughbutLeft">{{ doughnutLeft }}</canvas>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
-          <p><strong>Employees enrolled vs not enrolled</strong></p>
-          <canvas #canvasDoughbutRight id="canvasDoughbutRight">{{ doughnutRight }}</canvas>
+          <div class="row">
+              <div class="col-md-11 col-md-push-1 dashboard-chart">
+                <p><strong>Employees enrolled vs not enrolled</strong></p>
+                <canvas #canvasDoughbutRight id="canvasDoughbutRight">{{ doughnutRight }}</canvas>
+              </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
-        <div class="col-md-8 col-md-push-2">
+        <div class="col-md-8 col-md-push-2 dashboard-chart">
         <p><strong>Result: Knowledge before and after course</strong></p>
         <canvas #canvasLine id="canvasLine">{{ lineChart }}</canvas>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-8 col-md-push-2">
+      <div class="col-md-8 col-md-push-2 dashboard-chart chart">
         <p><strong>Result: Baseline assessment</strong></p>
         <canvas #canvas id="canvas">{{ chart }}</canvas>
       </div>

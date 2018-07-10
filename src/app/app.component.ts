@@ -132,22 +132,20 @@ export class AppComponent {
       this.doughnutRight = new Chart(ctxRight, {
         type: 'doughnut',
         data: {
-          labels: ["Workers", "Supervisors", "Managers"],
+          labels: ["Enrolled in this course", "Not enrolled"],
           datasets: [
             {
-              label: "% Workers",
-              data: [40, 25, 10],
+              label: "% Enrolled",
+              data: [60, 40],
               backgroundColor: [
                 "rgba(116, 192, 153)", // Mint
-                "rgba(255, 102, 102)",
                 "rgba(0, 60, 65)" // dark blue
               ],
               borderColor: [
-                "rgba(116, 192, 153)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(0, 60, 65)"
+                "rgba(116, 192, 153)", // Mint
+                "rgba(0, 60, 65)" // dark blue
               ],
-              borderWidth: 0
+              borderWidth: 1
             }
           ]
         }

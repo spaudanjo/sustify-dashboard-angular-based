@@ -1,12 +1,15 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: rgb(0, 93, 83);
-}
+} */
 
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
+  background-color: rgb(0, 93, 83);
 }
 
 p {
@@ -14,7 +17,7 @@ p {
 }
 
 .row {
-  margin: 5%;
+  margin-top: 5%;
 }
 
 .wrapper {
@@ -22,34 +25,3 @@ p {
   text-align: center;
 }
 
-.bar {
-  padding: 2%;
-  margin-top: 10%;
-  margin-left: 25%;
-  background-color: white;
-  border-radius: 25px;
-}
-
-.doughnut-1 {
-  float: left;
-  width: 25%;
-  padding: 5%;
-  margin-left: 10%;
-  margin-bottom: 10%;
-  background-color: white;
-  border-radius: 25px;
-}
-
-.doughnut-2 {
-  float: left;
-  width: 25%;
-  padding: 5%;
-  margin-left: 5%;
-  background-color: white;
-  border-radius: 25px;
-}
-
-.h-bars {
-  width: 80%;
-  margin-left: 5%;
-}

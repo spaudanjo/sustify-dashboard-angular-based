@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.dashboard-chart {
+  background-color: white;
+  padding: 1em;
+  border-radius: 1em;
+  margin-bottom: 2em;
+}
