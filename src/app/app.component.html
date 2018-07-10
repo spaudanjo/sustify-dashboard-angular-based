@@ -1,8 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div>
-  <canvas #canvas id="canvas">{{ chart }}</canvas>
-  <canvas #canvasBar id="canvasBar">{{ barChart }}</canvas>
-  <canvas #canvasDoughbutLeft id="canvasDoughbutLeft">{{ doughnutLeft }}</canvas>
-  <canvas #canvasDoughbutRight id="canvasDoughbutRight">{{ doughnutRight }}</canvas>
+<div class="App">
+  <div class="wrapper">
+    <div class="bar">
+      <p><strong>Result: Knowledge before and after course</strong></p>
+      <canvas #canvasBar id="canvasBar">{{ barChart }}</canvas>
+    </div>
+    <div class="doughnut-1">
+      <p><strong>User demographics: Role</strong></p>
+      <canvas #canvasDoughbutLeft id="canvasDoughbutLeft">{{ doughnutLeft }}</canvas>
+    </div>
+    <div class="doughnut-2">
+      <p><strong>Employees enrolled vs not enrolled</strong></p>
+      <canvas #canvasDoughbutRight id="canvasDoughbutRight">{{ doughnutRight }}</canvas>
+    </div>
+    <div class="h-bars">
+      <p><strong>Result: Baseline assessment</strong></p>
+      <canvas #canvas id="canvas">{{ chart }}</canvas>
+    </div>
+  </div>
 </div>
