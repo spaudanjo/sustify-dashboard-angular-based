@@ -13,6 +13,10 @@ p {
   color: rgb(0, 93, 83);
 }
 
+.row {
+  margin: 5%;
+}
+
 .wrapper {
   width: 100%;
   text-align: center;
@@ -20,7 +24,6 @@ p {
 
 .bar {
   padding: 2%;
-  width: 40%;
   margin-top: 10%;
   margin-left: 25%;
   background-color: white;
