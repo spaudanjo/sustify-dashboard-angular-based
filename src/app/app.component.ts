@@ -18,6 +18,7 @@ export class AppComponent {
 
   @ViewChild('canvas') canvas: ElementRef;
   @ViewChild('canvasBar') canvasBar: ElementRef;
+  @ViewChild('canvasLine') canvasLine: ElementRef;
   @ViewChild('canvasDoughbutLeft') canvasDoughbutLeft: ElementRef;
   @ViewChild('canvasDoughbutRight') canvasDoughbutRight: ElementRef;
 
@@ -58,6 +59,44 @@ export class AppComponent {
               borderWidth: 0
             }
           ]
+        },
+        options: {
+          scales: {
+              "yAxes": [{"ticks": { "beginAtZero": true, "max": 100}}]
+            }
+        }
+      });
+
+      const ctxLine = this.canvasLine.nativeElement.getContext('2d');
+
+      this.lineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+          labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
+          datasets: [{
+            label: "Attendance %",
+            backgroundColor: "rgba(21, 147, 105, 0.8)",
+            fill: true,
+            data: [100, 80, 75, 80, 75, 40, 85, 90, 92, 95, 90],
+            lineTension: 0
+          },
+          {
+            label: "Threashold",
+            borderColor: "rgba(255, 102, 102, 0.8)",
+            data: [90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90],
+            radius: 0,
+            fill: false,
+            lineTension: 0
+          }]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+          scales: {
+            "yAxes": [{"ticks": { "beginAtZero": true, "max": 100}}],
+            "xAxes": [{scaleLabel:{display:true,labelString:'Week'}}]
+          }
         }
       });
 
